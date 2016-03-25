@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: input/chapters/introduction.aux
+A level-1 auxiliary file: input/chapters/rics.aux
+A level-1 auxiliary file: input/chapters/exp_res.aux
+A level-1 auxiliary file: input/chapters/computational_res.aux
+A level-1 auxiliary file: input/chapters/1d_res.aux
+A level-1 auxiliary file: input/chapters/noonan.aux
+A level-1 auxiliary file: input/chapters/mice.aux
+The style file: plain.bst
+Database file #1: zotero-iocbio.bib
+Database file #2: ardo-extra.bib
+You've used 31 entries,
+            2118 wiz_defined-function locations,
+            736 strings with 11449 characters,
+and the built_in function-call counts, 12280 in all, are:
+= -- 1135
+> -- 744
+< -- 2
++ -- 294
+- -- 261
+* -- 1061
+:= -- 2111
+add.period$ -- 94
+call.type$ -- 31
+change.case$ -- 221
+chr.to.int$ -- 0
+cite$ -- 31
+duplicate$ -- 356
+empty$ -- 855
+format.name$ -- 261
+if$ -- 2480
+int.to.chr$ -- 0
+int.to.str$ -- 31
+missing$ -- 32
+newline$ -- 158
+num.names$ -- 64
+pop$ -- 170
+preamble$ -- 1
+purify$ -- 191
+quote$ -- 0
+skip$ -- 235
+stack$ -- 0
+substring$ -- 824
+swap$ -- 42
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 122
+warning$ -- 0
+while$ -- 94
+width$ -- 33
+write$ -- 344

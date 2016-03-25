@@ -1,0 +1,101 @@
+%ME
+\newcommand{\dd}{\; \mathrm{d}}
+\newcommand{\fint}{\mathlarger{\int}}
+\newcommand{\F}[1] {Fig.#1}
+\newcommand{\Fs}[1] {Figs.\ #1}
+\newcommand{\Fe}[1] {Figure~#1}
+
+\newcommand{\DEX} {Alexa647-dextran 10K}
+\newcommand{\ATP} {ATTO633-ATP}
+\newcommand{\T}[1] {Table\ #1}
+
+\newcommand{\VO}{VO$_2$}
+\newcommand{\ch}{$\chi^2$}
+\newcommand{\PI}{P$_i$}
+\newcommand{\Ca}{[Ca]$_{o}$}
+
+
+\newcommand{\Eq}[1] {Eq.\hspace{-3pt}#1}
+\newcommand{\Eqs}[1] {Eqs. #1}
+%\renewcommand{\thefigure}{S\arabic{figure}}
+%\renewcommand{\thepage}{S\arabic{page}}
+
+%\newcommand{\newtext}[1]{\textcolor{red}{\uline{#1}}}
+\newcommand{\newtext}[1]{#1}
+
+%#DAVID
+\newcommand{\TODO}[1]{{\bfseries \large TODO: #1}}
+
+\newcommand{\PNref}[2]{\hyperlink{#1.#2}{Publication~#1 Page~#2}}
+\newcommand{\PFref}[3]{\hyperlink{#1.#2}{Publication~#1 Figure~#3}}
+\newcommand{\Fref}[2]{\hyperlink{#1}{Figure~#2}}
+
+%Use with parts
+%\newcommand{\GetPartNumber}[1]{\IfBeginWith{#1}{partDis}{II}{I}}
+%\newcommand{\Pref}[1]{\def\chapterautorefname{Part~\GetPartNumber{#1}}\IfSubStr[2]{#1}{:}{\PCref{#1}}{\PSref{#1}}}
+%\newcommand{\PCref}[1]{\def\chapterautorefname{Part~\GetPartNumber{#1}} \autoref{#1}}
+%\newcommand{\PSref}[1]{\def\sectionautorefname{Part~\GetPartNumber{#1} Chapter} \autoref{#1}}
+%Use without parts
+\newcommand{\Pref}[1]{\def\chapterautorefname{}\IfSubStr[2]{#1}{:}{\PCref{#1}}{\PSref{#1}}}
+\newcommand{\PCref}[1]{\def\sectionautorefname{Section}~\autoref{#1}}
+\newcommand{\PSref}[1]{\def\sectionautorefname{Chapter}~\autoref{#1}}
+
+\newcommand{\outputFont}{\{ \encodingdefault \}\{ \familydefault \}\{ \seriesdefault \}\{ \shapedefault \}}
+
+%\newcommand{\Pref}[1]{\xifthen{\isempty{\StrBefore[2]{#1}{:}}}{\PCref{#1}}{\PSref{#1}}}
+
+%\newcommand{\marginDef}[2]{\textcolor{Sepia}{#1}\graffito{\textcolor{Sepia}{#2}}}
+\newcommand{\marginDef}[2]{#1}
+
+\newcommand{\twod}{2\textsc{d}\xspace}
+\newcommand{\threed}{3\textsc{d}\xspace}
+
+
+\newcommand{\cM}[1]{{\color{Maroon}#1}}
+\newcommand{\labO}{{$\mathsf \ce{^{18}O}$}}
+\newcommand{\ulabO}{$\mathsf \ce{^{16}O}$\xspace}
+\newcommand{\blabO}{$\mathsf {^{\text{\bfseries 18\hspace{-0.03cm}}}}$\bfseries O\xspace}
+
+\newcommand{\superscript}[1]{\ensuremath{^{\textrm{#1}}}}
+\newcommand{\subscript}[1]{\ensuremath{_{\textrm{#1}}}}
+
+\newcommand{\Method}[1]{Method $\mathcal{#1}$}
+\newcommand{\MethodLetter}[1]{$\mathcal{#1}$}
+
+\newcommand{\AFCL}[1]{\phantomsection\addcontentsline{lof}{chapter}{#1}}
+\newcommand{\ATCL}[1]{\phantomsection\addcontentsline{lot}{chapter}{#1}}
+\newcommand{\PubF}[3]{\label{#1:F#2}Publication #1 \hspace{#3cm} Figure #2 \hspace{0.5cm}}
+\newcommand{\PubT}[3]{\label{#1:T#2}Publication #1 \hspace{#3cm} Table #2 \hspace{0.7cm}}
+
+\newcommand{\rnum}[1]{(\romannumeral #1)}
+\newcommand{\Rnum}[1]{(\expandafter\@slowromancap\romannumeral #1@)}
+\newcommand{\RnumNB}[1]{{\expandafter\@slowromancap\romannumeral #1@}}
+\newcommand{\Anum}[1]{{\setcounter{foo}{#1}\textcolor{Sepia}{\textsc{\alph{foo}}}}}
+
+\newcommand{\sTH}[0]{\superscript{th}\xspace}
+\newcommand{\sST}[0]{\superscript{st}\xspace}
+\newcommand{\sND}[0]{\superscript{nd}\xspace}
+\newcommand{\sRD}[0]{\superscript{rd}\xspace}
+\newcommand{\PaperI}[0]{\hyperref[pubIpage]{Publication I}\xspace}
+\newcommand{\PaperII}[0]{\hyperref[pubIIpage]{Publication II}\xspace}
+\newcommand{\PaperIII}[0]{\hyperref[pubIIIpage]{Publication III}\xspace}
+\newcommand{\PaperIIIS}[0]{\hyperref[pubIIIpage]{Publication III
+Supporting Material}\xspace}
+\newcommand{\PaperIV}[0]{\hyperref[pubIVpage]{Publication IV}\xspace}
+
+\newcommand{\PaperNumI}[0]{\hyperref[pubIpage]{I}\xspace}
+\newcommand{\PaperNumII}[0]{\hyperref[pubIIpage]{II}\xspace}
+\newcommand{\PaperNumIII}[0]{\hyperref[pubIIIpage]{III}\xspace}
+\newcommand{\PaperNumIV}[0]{\hyperref[pubIVpage]{IV}\xspace}
+
+\def\EO{\chemskipalign\tikz\draw(0,0)circle(2pt);}
+\def\FO{\chemskipalign\tikz\fill(0,0)circle(2pt);}
+\def\SB{0.3}
+\def\LB{0.5}
+\newcommand{\AL}[1]
+	   {
+	     \ifthenelse{\equal{#1}{1}}{\FO}{}
+	     \ifthenelse{\equal{#1}{0}}{\EO}{}
+	   }
+           
+\newcommand{\vect}[1]{\boldsymbol{\mathbf{#1}}}

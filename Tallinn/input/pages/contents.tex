@@ -1,0 +1,159 @@
+%*******************************************************
+% Table of Contents
+%*******************************************************
+%\phantomsection
+\refstepcounter{dummy}
+\pdfbookmark[1]{\contentsname}{tableofcontents}
+\setcounter{tocdepth}{2} % <-- 2 includes up to subsections in the ToC
+\setcounter{secnumdepth}{2} % <-- 3 numbers up to subsubsections
+\manualmark
+\markboth{\spacedlowsmallcaps{\contentsname}}{\spacedlowsmallcaps{\contentsname}}
+\tableofcontents 
+\automark[section]{chapter}
+\renewcommand{\chaptermark}[1]{\markboth{\spacedlowsmallcaps{#1}}{\spacedlowsmallcaps{#1}}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\enspace\spacedlowsmallcaps{#1}}}
+%*******************************************************
+% List of Figures and of the Tables
+%*******************************************************
+\clearpage
+
+\begingroup 
+    \let\clearpage\relax
+    \let\cleardoublepage\relax
+    \let\cleardoublepage\relax
+    \refstepcounter{dummy}
+    \addtocontents{toc}{\protect\vspace{\beforebibskip}}
+
+    %*******************************************************
+    % Abstract / Kokkuvote
+    %*******************************************************
+
+    \begingroup
+    \phantomsection\addcontentsline{toc}{chapter}{\tocEntry{Summary}}
+    %\pdfbookmark[1]{Abstract}{Abstract} 
+    \input{input/small/abstract}
+
+    \newpage
+
+    %\pdfbookmark[1]{Kokkuv\~ote}{Kokkuv\~ote}
+    \phantomsection\addcontentsline{toc}{chapter}{\tocEntry{Kokkuv\~ote}}
+    \input{input/small/abstract_est}
+    \endgroup
+    
+    \newpage
+
+    %*******************************************************
+    % List of Publications
+    %*******************************************************    
+    \phantomsection 
+    \refstepcounter{dummy}
+    \addcontentsline{toc}{chapter}{\tocEntry{List of Publications}}
+    %\pdfbookmark[1]{List of Publications}{List of Publications}
+
+    \chapter*{List of Publications}
+    \input{input/small/publications}
+    \vspace*{3ex}
+    
+    
+    %*******************************************************
+    % List of Author Contribution
+    %*******************************************************    
+   % \phantomsection 
+   % \refstepcounter{dummy}
+    %\addcontentsline{toc}{chapter}{\tocEntry{Summary of Author's
+  %  Contribution}}
+    %%\pdfbookmark[1]{List of Publications}{List of Publications}
+
+    \input{input/small/contributions}
+    \vspace*{3ex}
+
+
+    %*******************************************************
+    % List of Presentations
+    %*******************************************************    
+    \phantomsection 
+    \refstepcounter{dummy}
+    \addcontentsline{toc}{chapter}{\tocEntry{List of Conference Presentations}}
+    %\pdfbookmark[1]{List of Presentations}{List of Publications}
+    \chapter*{List of Conference Presentations}
+    \input{input/small/presentations}
+    
+    \phantomsection 
+    \refstepcounter{dummy}
+    \addcontentsline{toc}{chapter}{\tocEntry{Released Software}}
+    %\pdfbookmark[1]{List of Presentations}{List of Publications}
+
+    \chapter*{Released software}
+    %\renewcommand{\theenumi}{\Roman{enumi}}
+    \textsf{LSJuicer} -- a multi-platform tool for analysing fluorescence vs.
+    time data (\eg, linescan images from confocal microscopes, csv data
+    from spectrophotometers, fluorimeters, etc). This open-source software was used
+    for analyzing \ce{Ca^2+} transients in \PaperII and was also employed for \ce{Ca^2+} spark analysis in
+    \cite{Ramay_11_CardiovascRes_91_p598}. Available at
+  \url{http://lsjuicer.googlecode.com}
+
+    \newpage
+
+
+    %%*******************************************************
+    %% List of Figures
+    %%*******************************************************    
+    %\phantomsection 
+    %\refstepcounter{dummy}
+    %\addcontentsline{toc}{chapter}{\tocEntry{\listfigurename}}
+    %%\pdfbookmark[1]{\listfigurename}{lof}
+    %\listoffigures
+
+    %\vspace*{8ex}
+
+    %%*******************************************************
+    %% List of Tables
+    %%*******************************************************
+    %\phantomsection 
+    %\refstepcounter{dummy}
+    %\addcontentsline{toc}{chapter}{\tocEntry{\listtablename}}
+    %%\pdfbookmark[1]{\listtablename}{lot}
+    %\listoftables
+    %    
+    %\newpage
+    
+    %*******************************************************
+    % List of Listings
+    %*******************************************************      
+	  %\phantomsection 
+    %\refstepcounter{dummy}
+    %\addcontentsline{toc}{chapter}{\tocEntry{\lstlistlistingname}}
+    %\pdfbookmark[1]{\lstlistlistingname}{lol}
+    %\lstlistoflistings 
+
+    %\vspace*{8ex}
+       
+
+    %*******************************************************
+    % Preface
+    %*******************************************************
+    \refstepcounter{dummy}
+    \addcontentsline{toc}{chapter}{\tocEntry{Preface}}
+    %\pdfbookmark[1]{Preface}{Preface}
+    %\markboth{\spacedlowsmallcaps{Preface}}{\spacedlowsmallcaps{Preface}}
+
+    \input{input/small/preface}
+    \newpage
+    
+    %*******************************************************
+    % Acronyms
+    %*******************************************************
+    \refstepcounter{dummy}
+    \phantomsection\addcontentsline{toc}{chapter}{\tocEntry{Acronyms}}
+    %\pdfbookmark[1]{Acronyms}{acronyms}
+    \markboth{\spacedlowsmallcaps{Acronyms}}{\spacedlowsmallcaps{Acronyms}}
+    \chapter*{Acronyms}
+    \input{input/small/acronyms}
+
+    \newpage
+
+    % Extra space in contents
+    \addtocontents{toc}{\protect\vspace{\beforebibskip}}
+
+                 
+\endgroup

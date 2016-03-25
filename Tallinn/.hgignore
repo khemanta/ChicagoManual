@@ -1,0 +1,16 @@
+syntax: glob
+*.map
+*.blg
+*.ps
+*.dvi
+*.log
+task.*
+*.eps
+*.aux
+*.bbl
+main.pdf
+*.html
+*.out
+*.lof
+*.lot
+*.toc

@@ -1,0 +1,48 @@
+
+
+%%%%%%%
+%FIGURE
+%
+\begin{figure}
+  \centering
+    \includegraphics[width=12cm]{figures/xyz.pdf}
+    \caption{Text for caption}
+    \label{fig:xyz}
+\end{figure}
+
+%example
+\begin{figure}
+  \centering
+    \includegraphics[width=9cm]{figures/range_5.pdf}
+    \caption[Regional \acsp{DC} for barriers 5 $\mu$m apart]{\acsp{DC} obtained
+    from regional \ac{RICS} analysis of linescan data obtained from a
+    computational model. Barriers (indicated by short vertical lines) are
+    places 5 $\mu$m apart and their permeability(p) is varied between model
+    runs. \acsp{DC} obtained for varying permeability values are shown with
+    different lines. The value shown at any $x$ location is the \ac{DC}
+    obtained from \ac{RICS} analysis on the 1 $\mu$m segment centered at that
+    location.}
+    \label{fig:1drange}
+\end{figure}
+
+%%%%%%
+%TABLE
+%
+\begin{table}
+    \begin{center}
+        \input{input/small/xyz}
+    \end{center}
+    \caption{Text for caption}
+    \label{table:xyz}
+\end{table}
+%Example
+\begin{table}
+    \begin{center}
+        \input{input/small/table2}
+    \end{center}
+    \caption[Properties of barriers restricting diffusion]{Properties of
+    barriers restricting diffusion predicted by stochastic model on the
+    basis of RICS measurements. Data presented is mean$\pm$standard
+    deviation.}
+    \label{table:model_res}
+\end{table}

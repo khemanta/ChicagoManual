@@ -1,0 +1,188 @@
+\documentclass[ twoside,openright,titlepage,numbers=noenddot,%headinclude,%1headlines,% letterpaper a4paper
+%\documentclass[ titlepage,numbers=noenddot,%headinclude,%1headlines,% letterpaper a4paper
+                footinclude=true,cleardoublepage=empty,abstractoff, % <--- obsolete, remove (todo)
+                BCOR=3mm,paper=b5,fontsize=11pt,%11pt,a4paper,%
+                british,open=right%
+                ]{scrreprt}
+
+%    * New enumeration (small caps): \begin{aenumerate} \end{aenumerate}
+%    * For margin notes: \marginpar or \graffito{}
+%    * See classicthesis-preamble.sty for useful commands
+
+%********************************************************************
+% Note: Make all your adjustments in here
+%*******************************************************
+\usepackage[dvipsnames]{xcolor}
+\usepackage{classicthesis-preamble} % [backref]
+\usepackage{main-defs} 
+\usepackage{mystyle}
+
+\usepackage{latinstuff} 
+%\usepackage[encapsulated]{CJK}
+%\usepackage{enumitem}
+
+\usepackage{ucs}
+%\usepackage{nonfloat}
+%*******************************************************
+% Font selection
+%*******************************************************
+\usepackage{libertine}
+%\renewcommand*\oldstylenums[1]{{\fontfamily{fxlj}\selectfont #1}}
+
+%*******************************************************
+% Fine-tuning for the text area
+%*******************************************************
+\linespread{1.05} % a bit more for Libertine
+\areaset[current]{350pt}{660pt} % 686 (factor 2.2) + 33 head + 42 head \the\footskip
+\setlength{\marginparwidth}{7em}%
+\setlength{\marginparsep}{2em}%
+
+%********************************************************************
+% Hyphenation
+%*******************************************************
+%\hyphenation{put special hyphenation here}
+\hyphenation{meta-bolic}
+\hyphenation{Oma-dused}
+\hyphenation{keemi-lise-st}
+\hyphenation{Sacc-haro-myces}
+
+\usepackage[margin=2.5cm]{geometry}
+\begin{document}
+%\dedication{dedication}
+\newcounter{foo}
+\frenchspacing
+\raggedbottom
+\selectlanguage{british} % american ngerman
+%\renewcommand*{\bibname}{new name}
+%\setbibpreamble{}
+\pagenumbering{roman}
+\pagestyle{scrheadings}
+%\cefoot{\pagemark}
+%\cofoot{\pagemark}
+%put the page number in the center of the page
+\ofoot[]{}
+\ifoot[]{}
+\cfoot[\pagemark]{\pagemark}
+
+%********************************************************************
+% Frontmatter
+%*******************************************************
+
+\input{input/pages/outertitlepage}
+\input{input/pages/innertitlepage}
+\input{input/pages/titleback}
+\input{input/pages/estoniantitlepage}
+\cleardoublepage
+\input{input/pages/contents}
+\addtocontents{toc}{\protect\vspace{0.4cm}}
+%********************************************************************
+% Mainmatter
+%*******************************************************
+%\setcounter{page}{90}
+% use \cleardoublepage here to avoid problems with pdfbookmark
+\cleardoublepage
+\pagebreak
+\newcounter{runningpage}
+\setcounter{runningpage}{\value{page}}
+\pagenumbering{arabic}
+\setcounter{page}{\value{runningpage}}
+
+\part{Thesis}
+
+
+\include{input/chapters/introduction}
+
+%\cleardoublepage
+%\addtocontents{toc}{\protect\vspace{0.4cm}}
+
+\include{input/chapters/rics}
+\include{input/chapters/exp_res}
+\include{input/chapters/computational_res}
+\include{input/chapters/1d_res}
+\include{input/chapters/noonan}
+\include{input/chapters/mice}
+%\include{input/ch_2d_res}
+%\include{input/ch_methods}
+
+\input{input/chapters/conclusions}
+%\addtocontents{toc}{\protect\vspace{0.4cm}}
+\bibliographystyle{plain}
+\cleardoublepage
+\addtocontents{toc}{\protect\vspace{0.4cm}}
+
+
+\addtocontents{toc}{\protect\vspace{0.4cm}}
+\part{Bibliography}
+%\phantomsection\addcontentsline{toc}{part}{\tocEntry{Bibliography}}
+%\bibliography{converted_bibliography}
+\bibliography{zotero-iocbio,ardo-extra}%\phantomsection
+%
+%\clearpage\include{bibliography}
+		
+\vfill
+
+
+%\let\cleardoublepage\relax
+\addtocontents{toc}{\protect\vspace{0.2cm}}
+%\pagebreak
+\cleardoublepage
+%$\,$a\\
+%\pagebreak
+%\begingroup
+%\phantomsection
+\part{\CurriculumVitae}\thispagestyle{empty}
+%\[\]
+%\phantomsection\addcontentsline{toc}{part}{\tocEntry{Curriculum Vit\ae}}
+\label{ext:cv}
+\newcommand{\thepaper}{\CurriculumVitae}
+\includepdf[link=true, linkname=CV, pagecommand={\thispagestyle{published}}, pages={1-}]{papers/cv_eng.pdf}
+\renewcommand{\thepaper}{Elulookirjeldus}
+\includepdf[link=true, linkname=CV, pagecommand={\thispagestyle{published}}, pages={1-}]{papers/cv_est.pdf}
+%\endgroup			
+%\vfill
+
+% ********************************************************************
+% Backmatter
+%*******************************************************
+
+%\appendix
+%\pagebreak
+\addtocontents{toc}{\protect\vspace{0.2cm}}
+\phantomsection\part{Appendix}\thispagestyle{empty}
+\renewcommand{\thepaper}{}
+
+%%%%%%%%
+%PAPERS
+%
+\input{input/small/paper1}
+\input{input/small/paper2}
+\input{input/small/paper3}
+
+\pagestyle{published}
+
+\vspace{0.51cm}
+
+\thispagestyle{plain}
+\begin{center}
+\textls{\textsc{DISSERTATIONS DEFENDED \\AT TALLINN UNIVERSITY OF TECHNOLOGY\\ON NATURAL AND EXACT SCIENCES}}
+\end{center}
+\vspace{0.51cm}
+
+\hrule
+
+\vspace{0.5cm}
+
+%\phantomsection\addcontentsline{toc}{chapter}{\tocEntry{TUT dissertations in natural and exact sciences}}
+%\addtocounter{chapter}{1}
+
+\begin{scriptsize}
+  \input{input/pages/tut_dissertations}
+\end{scriptsize}
+%\pagebreak
+%\cleardoublepage
+%\thispagestyle{empty}
+%\input{input/pages/backcover}
+
+\end{document}
+% ********************************************************************
+
